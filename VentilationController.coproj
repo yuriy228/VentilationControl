@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project version="2G - 2.0.5" name="VentilationController">
+  <Target name="VentilationController" isCurrent="1">
+    <Device manufacturerId="9" manufacturerName="ST" chipId="344" chipName="STM32F407VG" boardId="" boardName=""/>
+    <BuildOption>
+      <Compile>
+        <Option name="OptimizationLevel" value="0"/>
+        <Option name="UseFPU" value="1"/>
+        <Option name="UserEditCompiler" value="-std=gnu++11; -Wno-comment"/>
+        <Option name="SupportCPlusplus" value="1"/>
+        <Option name="FPU" value="2"/>
+        <Option name="DEBUG" value="2"/>
+        <Option name="WARNING" value="1"/>
+        <Option name="ADVANCES" value="1"/>
+        <Option name="CPPADVANCES" value="0,0,0,0,0,0"/>
+        <Includepaths>
+          <Includepath path="."/>
+        </Includepaths>
+        <DefinedSymbols>
+          <Define name="STM32F407xx"/>
+          <Define name="ARM_MATH_CM4"/>
+          <Define name="SUPPORT_CPLUSPLUS"/>
+          <Define name="__FPU_USED"/>
+          <Define name="STM32F407VG"/>
+          <Define name="STM32F4XX"/>
+        </DefinedSymbols>
+      </Compile>
+      <Link useDefault="0">
+        <Option name="DiscardUnusedSection" value="0"/>
+        <Option name="UserEditLinkder" value=""/>
+        <Option name="UseMemoryLayout" value="0"/>
+        <Option name="nostartfiles" value="0"/>
+        <Option name="LTO" value="0"/>
+        <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Use base C Library"/>
+        <Option name="UserEditLinker" value="--entry=main; -lstdc++; "/>
+        <Option name="DiscardUnusedSections" value="1"/>
+        <LinkedLibraries/>
+        <MemoryAreas debugInFlashNotRAM="1">
+          <Memory name="IROM1" type="ReadOnly" size="0x00100000" startValue="0x08000000"/>
+          <Memory name="IRAM1" type="ReadWrite" size="0x00020000" startValue="0x20000000"/>
+          <Memory name="IROM2" type="ReadOnly" size="" startValue=""/>
+          <Memory name="IRAM2" type="ReadWrite" size="0x00010000" startValue="0x10000000"/>
+        </MemoryAreas>
+        <LocateLinkFile path="./stm32f407vgtx_flash.ld" type="0"/>
+      </Link>
+      <Output>
+        <Option name="OutputFileType" value="0"/>
+        <Option name="Path" value="./"/>
+        <Option name="Name" value="VentilationController"/>
+        <Option name="HEX" value="0"/>
+        <Option name="BIN" value="1"/>
+      </Output>
+      <User>
+        <UserRun name="Run#1" type="Before" checked="0" value=""/>
+        <UserRun name="Run#1" type="After" checked="0" value=""/>
+      </User>
+    </BuildOption>
+    <DebugOption>
+      <Option name="org.coocox.codebugger.gdbjtag.core.adapter" value="ST-Link"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.debugMode" value="SWD"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.clockDiv" value="1M"/>
+      <Option name="org.coocox.codebugger.gdbjtag.corerunToMain" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkgdbserver" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.userDefineGDBScript" value=""/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.targetEndianess" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.jlinkResetMode" value="Type 0: Normal"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.resetMode" value="SYSRESETREQ"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifSemihost" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ifCacheRom" value="0"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.ipAddress" value="127.0.0.1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.portNumber" value="2009"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.autoDownload" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.verify" value="1"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.downloadFuction" value="Erase Effected"/>
+      <Option name="org.coocox.codebugger.gdbjtag.core.defaultAlgorithm" value="STM32F4xx_1024.elf"/>
+    </DebugOption>
+    <ExcludeFile/>
+  </Target>
+  <Components path="./"/>
+  <Files>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c" type="1"/>
+    <File name="Modules/Heater.h" path="Modules/Heater.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h" type="1"/>
+    <File name="Lib/My" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" type="1"/>
+    <File name="Modules/Sensors.cpp" path="Modules/Sensors.cpp" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_cos_q15.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_cos_q15.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Source" path="" type="2"/>
+    <File name="Lib/CMSIS/Include/arm_common_tables.h" path="Lib/CMSIS/Include/arm_common_tables.h" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_sin_f32.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_sin_f32.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cmInstr.h" path="Lib/CMSIS/Include/core_cmInstr.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_sc300.h" path="Lib/CMSIS/Include/core_sc300.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c" type="1"/>
+    <File name="Lib/mxconstants.h" path="../Osc/Lib/mxconstants.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f479xx.h" type="1"/>
+    <File name="Modules/Heater.cpp" path="Modules/Heater.cpp" type="1"/>
+    <File name="Lib/CMSIS/Include/arm_math.h" path="Lib/CMSIS/Include/arm_math.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST" path="" type="2"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f410cx.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f410rx.h" type="1"/>
+    <File name="Lib/CMSIS/Device" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f439xx.h" type="1"/>
+    <File name="Main/tools.h" path="Main/tools.h" type="1"/>
+    <File name="Lib/PrintF/semihosting.h" path="Lib/PrintF/semihosting.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_sc000.h" path="Lib/CMSIS/Include/core_sc000.h" type="1"/>
+    <File name="Lib/PrintF/printf.c" path="Lib/PrintF/printf.c" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cmFunc.h" path="Lib/CMSIS/Include/core_cmFunc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h" type="1"/>
+    <File name="Main/main.cpp" path="Main/main.cpp" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_sin_q15.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_sin_q15.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f429xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f417xx.h" type="1"/>
+    <File name="Main" path="" type="2"/>
+    <File name="Lib/PrintF/semihosting.c" path="Lib/PrintF/semihosting.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c" type="1"/>
+    <File name="Lib/stm32f4xx_hal_conf.h" path="Lib/stm32f4xx_hal_conf.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h" type="1"/>
+    <File name="Main/init.cpp" path="Main/init.cpp" type="1"/>
+    <File name="Modules/Communication.cpp" path="Modules/Communication.cpp" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cm3.h" path="Lib/CMSIS/Include/core_cm3.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c" path="Lib/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f410tx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx" path="" type="2"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h" type="1"/>
+    <File name="Lib" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cmSimd.h" path="Lib/CMSIS/Include/core_cmSimd.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c" type="1"/>
+    <File name="Lib/startup_stm32f407xx.s" path="Lib/startup_stm32f407xx.s" type="1"/>
+    <File name="Modules/VentilatorControl.cpp" path="Modules/VentilatorControl.cpp" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_sqrt_q15.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_sqrt_q15.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Source/Templates" path="" type="2"/>
+    <File name="Modules/Sensors.h" path="Modules/Sensors.h" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_cos_q31.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_cos_q31.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f437xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h" type="1"/>
+    <File name="Lib/My/Diagnostics.h" path="Lib/My/Diagnostics.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/Legacy" path="" type="2"/>
+    <File name="Lib/CMSIS/Include/core_cm7.h" path="Lib/CMSIS/Include/core_cm7.h" type="1"/>
+    <File name="Lib/CMSIS" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_sin_q31.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_sin_q31.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cm4.h" path="Lib/CMSIS/Include/core_cm4.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f407xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h" type="1"/>
+    <File name="Modules/Logic.cpp" path="Modules/Logic.cpp" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c" type="1"/>
+    <File name="Lib/PrintF" path="" type="2"/>
+    <File name="Lib/PrintF/sh_cmd.s" path="Lib/PrintF/sh_cmd.s" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h" type="1"/>
+    <File name="Modules/Communication.h" path="Modules/Communication.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h" type="1"/>
+    <File name="Lib/stm32f4xx_it.c" path="Lib/stm32f4xx_it.c" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cm0plus.h" path="Lib/CMSIS/Include/core_cm0plus.h" type="1"/>
+    <File name="Main/tools.cpp" path="Main/tools.cpp" type="1"/>
+    <File name="Lib/My/array.h" path="Lib/My/array.h" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_cos_f32.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_cos_f32.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f469xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions/arm_sqrt_q31.c" path="Lib/CMSIS/DSP/FastMathFunctions/arm_sqrt_q31.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h" type="1"/>
+    <File name="Lib/stm32f4xx_it.h" path="Lib/stm32f4xx_it.h" type="1"/>
+    <File name="Lib/syscalls.c" path="Lib/syscalls.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c" type="1"/>
+    <File name="Lib/CMSIS/DSP" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h" type="1"/>
+    <File name="Modules/VentilatorControl.h" path="Modules/VentilatorControl.h" type="1"/>
+    <File name="Lib/CMSIS/Include/arm_const_structs.h" path="Lib/CMSIS/Include/arm_const_structs.h" type="1"/>
+    <File name="Modules" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h" type="1"/>
+    <File name="Lib/CMSIS/Include" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" path="Lib/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c" path="Lib/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h" type="1"/>
+    <File name="Lib/CMSIS/DSP/FastMathFunctions" path="" type="2"/>
+    <File name="Main/main.h" path="Main/main.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h" type="1"/>
+    <File name="Modules/WatchDog.h" path="Modules/WatchDog.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/stm32f415xx.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h" type="1"/>
+    <File name="Lib/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" path="Lib/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h" type="1"/>
+    <File name="Modules/Logic.h" path="Modules/Logic.h" type="1"/>
+    <File name="Lib/CMSIS/Include/core_cm0.h" path="Lib/CMSIS/Include/core_cm0.h" type="1"/>
+    <File name="Lib/STM32F4xx_HAL_Driver" path="" type="2"/>
+    <File name="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" path="Lib/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h" type="1"/>
+    <File name="Main/types.h" path="Main/types.h" type="1"/>
+  </Files>
+</Project>
